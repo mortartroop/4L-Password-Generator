@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <head>
+    <meta charset="UTF-8">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Password Generator</h1>
-      <p>Select the type of password you want to generate:</p>
-      <div class="buttons">
-        <button id="generate-password-btn">Standard Password</button>
-        <button id="generate-secure-password-btn">Secure Password</button>
-      </div>
-      <div class="result">
-        <p id="password-display"></p>
-      </div>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-gray-200 font-sans">
+
+    <div class="container mx-auto p-6 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-10">Password Generator</h1>
+
+        <div class="buttons flex justify-between mb-10">
+        <button id="generate-password-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate Standard Password</button>
+        <button id="generate-secure-password-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate Secure Password</button>
+        </div>
+
+        <div class="bg-white border border-gray-300 rounded p-6 mb-10 text-center">
+        <p id="password-display" class="text-2xl font-bold mb-4">Your password will appear here.</p>
+        <button id="copy-password" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Copy Password</button>
+
+        </div>
+
+        <script src="index.js"></script>
     </div>
-    <script src="app.js"></script>
-  </body>
+
+        <footer class="text-align:center md:items-center md:justify-between md:p-6">
+            <p class="text-center text-gray-500">Made with ❤️ by Team Helium</p>
+        </footer>
+
+    </body>
+
 </html>
