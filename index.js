@@ -1,6 +1,7 @@
 const generatePasswordBtn = document.getElementById('generate-password-btn');
 const generateSecurePasswordBtn = document.getElementById('generate-secure-password-btn');
 const passwordDisplay = document.getElementById('password-display');
+const copyPasswordButton = document.getElementById("copy-password");
 
 const consonants = 'BCDFGHJKLMNPQRSTVWXYZ';
 const capital = consonants.split('');
@@ -39,6 +40,31 @@ function generate4LogicSecurePassword() {
   return pw;
 }
 
+document.getElementById("copy-password").addEventListener("click", function() {
+  const password = passwordDisplay.innerText;
+  if (!password) {
+    return;
+  }
+  navigator.clipboard.writeText(password)
+    .then(() => {
+      console.log('Password copied to clipboard');
+    })
+    .catch(err => {
+      console.error('Error copying password: ', err);
+    });
+});
+
+function copyPasswordToClipboard() {
+  const password = passwordDisplay.innerText;
+  navigator.clipboard.writeText(password).then(function() {
+    const notification = document.getElementById("notification");
+    notification.classList.remove("hidden");
+    setTimeout(function() {
+      notification.classList.add("hidden");
+    }, 2000);
+  });
+}
+
 generatePasswordBtn.addEventListener('click', () => {
   const password = generate4LogicPassword();
   passwordDisplay.innerText = password;
@@ -48,3 +74,5 @@ generateSecurePasswordBtn.addEventListener('click', () => {
   const password = generate4LogicSecurePassword();
   passwordDisplay.innerText = password;
 });
+
+copyPasswordButton.addEventListener("click", copyPasswordToClipboard);

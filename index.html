@@ -20,16 +20,23 @@
         <div class="bg-white border border-gray-300 rounded p-6 mb-10 text-center">
         <p id="password-display" class="text-2xl font-bold mb-4">Your password will appear here.</p>
         <button id="copy-password" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Copy Password</button>
-
         </div>
 
-        <script src="index.js"></script>
-    </div>
+        <div id="notification" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Password copied to clipboard!</strong>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+              <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 6.357 5.652a.5.5 0 0 0-.707.707L9.293 10l-3.643 3.643a.5.5 0 0 0 .708.707L10 10.707l3.643 3.643a.5.5 0 0 0 .707-.707L10.707 10l3.641-3.648a.5.5 0 0 0 0-.7z"/>
+              </svg>
+            </span>
+          </div>
+          
 
         <footer class="text-align:center md:items-center md:justify-between md:p-6">
             <p class="text-center text-gray-500">Made with ❤️ by Team Helium</p>
         </footer>
 
     </body>
-
+    <script src="index.js"></script>
 </html>
