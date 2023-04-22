@@ -11,6 +11,13 @@
 
     <div class="container mx-auto p-6 max-w-3xl">
         <h1 class="text-4xl font-bold mb-10">Password Generator</h1>
+        
+        <div class="mb-6">
+          <label class="block text-gray-700 font-bold mb-2" for="numPasswords">
+            Number of passwords to generate:
+          </label>
+          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numPasswords" type="number" min="1" max="10" value="1">
+        </div>
 
         <div class="buttons flex justify-between mb-10">
         <button id="generate-password-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate Standard Password</button>
