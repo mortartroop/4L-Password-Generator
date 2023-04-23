@@ -56,7 +56,7 @@ function copyPasswordToClipboard() {
     notification.classList.remove("hidden");
     setTimeout(function () {
       notification.classList.add("hidden");
-    }, 2000);
+    }, 5000);
   });
 }
 
@@ -85,3 +85,26 @@ generateSecurePasswordBtn.addEventListener("click", () => {
 });
 
 copyPasswordButton.addEventListener("click", copyPasswordToClipboard);
+
+function downloadTxtFile(filename) {
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," +
+      encodeURIComponent(
+        document.getElementById("password-display").textContent
+      )
+  );
+  element.setAttribute("download", filename);
+  element.style.display = "none";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
+const downloadBtn = document.getElementById("download-passwords");
+
+downloadBtn.addEventListener("click", () => {
+  const filename = "passwords.txt";
+  downloadTxtFile(filename);
+});
